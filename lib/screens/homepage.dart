@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
           centerTitle: true,
           actions: <Widget>[
             MaterialButton(
-              onPressed: () => print('LOgged Out'),
+              onPressed: () {print('LOgged Out');Navigator.pop(context);},
               child: Icon(
                 Icons.exit_to_app,
                 color: Colors.white,
@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               MaterialButton(
+                elevation: 1,
                 minWidth: 150,
                 height: 80,
                 shape: RoundedRectangleBorder(

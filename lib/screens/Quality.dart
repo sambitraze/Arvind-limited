@@ -26,6 +26,7 @@ class _QualityState extends State<Quality> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               MaterialButton(
+                elevation: 1,
                 minWidth: 150,
                 height: 80,
                 shape: RoundedRectangleBorder(
