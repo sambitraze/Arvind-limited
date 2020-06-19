@@ -83,28 +83,30 @@ class _DHUState extends State<DHU> {
               ],
             ),
             SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                decoration: TextFieldDec.inputDec("Line No"),
-                controller: lineNo,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                decoration: TextFieldDec.inputDec("Style No"),
-                controller: styleNo,
-              ),
-               SizedBox(
-                height: 30,
-              ),
-              MaterialButton(
+              height: 20,
+            ),
+            TextFormField(
+              decoration: TextFieldDec.inputDec("Line No"),
+              controller: lineNo,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextFormField(
+              decoration: TextFieldDec.inputDec("Style No"),
+              controller: styleNo,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            MaterialButton(
               minWidth: 150,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                color: Colors.black,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              color: Colors.black,
               padding: EdgeInsets.all(15),
-              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> DhuSubmit())),
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DhuSubmit(lineNo: lineNo.text,styleNo: styleNo.text,garment: garmentType,))),
               child: Text(
                 'Submit',
                 style: TextStyle(

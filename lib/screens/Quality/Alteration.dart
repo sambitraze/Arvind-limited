@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:arvind/compnents/textfieldBox.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:uuid/uuid.dart';
+
+final productionColRef = Firestore.instance.collection('alteration');
 
 class Alteration extends StatefulWidget {
   @override
@@ -9,12 +13,22 @@ class Alteration extends StatefulWidget {
 class _AlterationState extends State<Alteration> {
   TextEditingController quickFix = TextEditingController();
   TextEditingController hardFix = TextEditingController();
+  String id = Uuid().v4();
+   createData() async {
+    productionColRef.document(id).setData({
+      'quickFix':quickFix.text,
+      'hardfix':hardFix.text,
+      'timestamp': DateTime.now(),
+    });
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('DHU%'),
+        title: Text('Alteration'),
         centerTitle: true,
       ),
       body: Padding(
@@ -42,7 +56,7 @@ class _AlterationState extends State<Alteration> {
                     borderRadius: BorderRadius.circular(15)),
                 color: Colors.black,
                 padding: EdgeInsets.all(15),
-                onPressed: () => print("sbumit"),
+                onPressed: () {print("sbumit");createData();id = Uuid().v4();},
                 child: Text(
                   'Submit',
                   style: TextStyle(

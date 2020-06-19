@@ -32,6 +32,8 @@ dependencies:
   flutter_rounded_date_picker: ^1.0.0
   datetime_picker_formfield: ^1.0.0
   custom_splash:
+  cloud_firestore:
+  uuid: ^2.1.0
 
 
 dev_dependencies:
